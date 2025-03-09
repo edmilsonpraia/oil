@@ -1,0 +1,224 @@
+.about-page .page-header {
+    padding: 80px 0;
+    background-color: var(--background-dark);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .about-page .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1), transparent 70%);
+    z-index: 0;
+  }
+  
+  .about-page .page-header h1 {
+    font-size: 48px;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease, glow 3s infinite alternate;
+    background: linear-gradient(90deg, var(--text-primary), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 5px rgba(59, 130, 246, 0.1);
+    }
+    100% {
+      text-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    }
+  }
+  
+  .about-intro {
+    padding: 80px 0;
+    background-color: var(--background-dark);
+  }
+  
+  .intro-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .intro-text {
+    flex: 1;
+    animation: fadeIn 1s ease, slideInLeft 1s ease;
+  }
+  
+  .intro-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    line-height: 1.3;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  
+  .intro-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+  }
+  
+  .intro-content:hover .intro-text h2::after {
+    width: 100px;
+  }
+  
+  .intro-text p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .intro-image {
+    flex: 1;
+    height: 350px;
+    background: linear-gradient(135deg, var(--card-background), rgba(31, 41, 55, 0.5));
+    border-radius: 10px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease, slideInRight 1s ease, pulse 3s infinite alternate;
+  }
+  
+  .intro-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.2), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .intro-content:hover .intro-image::before {
+    opacity: 1;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4), 0 15px 15px -5px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+  }
+  
+  .specialists-section {
+    padding: 80px 0;
+    background-color: var(--background-dark);
+    position: relative;
+  }
+  
+  .specialists-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+  }
+  
+  .specialists-section h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 36px;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .specialists-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 0 auto;
+  }
+  
+  .specialists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .specialists-grid > div {
+    animation: fadeIn 0.6s ease;
+  }
+  
+  .specialists-grid > div:nth-child(1) { animation-delay: 0.1s; }
+  .specialists-grid > div:nth-child(2) { animation-delay: 0.2s; }
+  .specialists-grid > div:nth-child(3) { animation-delay: 0.3s; }
+  .specialists-grid > div:nth-child(4) { animation-delay: 0.4s; }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .intro-content {
+      flex-direction: column;
+    }
+    
+    .intro-text {
+      order: 1;
+    }
+    
+    .intro-image {
+      order: 0;
+      margin-bottom: 30px;
+    }
+  }

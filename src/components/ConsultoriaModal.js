@@ -13,6 +13,8 @@ const ConsultoriaModal = ({ isOpen, onClose }) => {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
   
   // Prevenir rolagem do corpo quando o modal estiver aberto
   useEffect(() => {
@@ -47,6 +49,10 @@ const ConsultoriaModal = ({ isOpen, onClose }) => {
     }
   };
 
+  const handleCheckboxChange = (e) => {
+    setPrivacyAccepted(e.target.checked);
+  };
+
   const validateForm = () => {
     const newErrors = {};
     
@@ -64,6 +70,10 @@ const ConsultoriaModal = ({ isOpen, onClose }) => {
     
     if (!formData.telefone?.trim()) {
       newErrors.telefone = 'Telefone é obrigatório';
+    }
+
+    if (!privacyAccepted) {
+      newErrors.privacy = 'Você precisa aceitar a política de privacidade';
     }
     
     return newErrors;
@@ -90,6 +100,7 @@ const ConsultoriaModal = ({ isOpen, onClose }) => {
         },
         body: JSON.stringify({
           ...formData,
+          privacyAccepted: privacyAccepted,
           _subject: 'Nova Solicitação de Consultoria'
         })
       });
@@ -108,6 +119,7 @@ const ConsultoriaModal = ({ isOpen, onClose }) => {
             telefone: '',
             mensagem: ''
           });
+          setPrivacyAccepted(false);
           onClose();
           setSubmitted(false);
         }, 3000);
@@ -133,6 +145,11 @@ const ConsultoriaModal = ({ isOpen, onClose }) => {
     e.stopPropagation();
   };
 
+  const togglePrivacyPolicy = (e) => {
+    e.preventDefault();
+    setShowPrivacyPolicy(!showPrivacyPolicy);
+  };
+
   return (
     <div className="modal-overlay" onClick={onClose} style={{ position: 'absolute' }}>
       <div 
@@ -151,6 +168,38 @@ const ConsultoriaModal = ({ isOpen, onClose }) => {
               <div className="success-icon">✓</div>
               <h3>Solicitação Enviada!</h3>
               <p>Entraremos em contato em breve.</p>
+            </div>
+          ) : showPrivacyPolicy ? (
+            <div className="privacy-policy-container">
+              <h3>Política de Privacidade</h3>
+              <div className="privacy-policy-content">
+                <h4>1. Informações que coletamos</h4>
+                <p>Coletamos apenas as informações que você fornece voluntariamente através do nosso formulário de contato, incluindo nome, email, telefone e mensagem.</p>
+                
+                <h4>2. Como usamos suas informações</h4>
+                <p>Utilizamos as informações fornecidas exclusivamente para:</p>
+                <ul>
+                  <li>Responder à sua solicitação de consultoria</li>
+                  <li>Fornecer informações sobre nossos serviços</li>
+                  <li>Melhorar nossos serviços e comunicação</li>
+                </ul>
+                
+                <h4>3. Proteção de dados</h4>
+                <p>Todas as informações são armazenadas com segurança e não são compartilhadas com terceiros, exceto quando necessário para atender à sua solicitação ou conforme exigido por lei.</p>
+                
+                <h4>4. Seu consentimento</h4>
+                <p>Ao enviar o formulário, você concorda com a coleta e uso de suas informações conforme descrito nesta política.</p>
+                
+                <h4>5. Seus direitos</h4>
+                <p>Você tem o direito de solicitar acesso, correção ou exclusão de seus dados pessoais a qualquer momento entrando em contato conosco através do email: <a href="mailto:contato@justificacoesacademicas.online">contato@justificacoesacademicas.online</a>.</p>
+                
+                <h4>6. Cookies e tecnologias de rastreamento</h4>
+                <p>Nosso site utiliza cookies apenas para melhorar a experiência do usuário. Nenhum cookie é utilizado para rastreamento ou publicidade.</p>
+                
+                <h4>7. Alterações na política</h4>
+                <p>Podemos atualizar esta política de privacidade de tempos em tempos. Quaisquer alterações serão publicadas nesta página.</p>
+              </div>
+              <button className="btn-secondary" onClick={togglePrivacyPolicy}>Voltar ao formulário</button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="consultoria-form">
@@ -216,11 +265,30 @@ const ConsultoriaModal = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                 ></textarea>
               </div>
+
+              <div className="form-group privacy-checkbox">
+                <input
+                  type="checkbox"
+                  id="privacy-policy"
+                  checked={privacyAccepted}
+                  onChange={handleCheckboxChange}
+                  className={errors.privacy ? 'error' : ''}
+                />
+                <label htmlFor="privacy-policy">
+                  Li e aceito a <a href="#" onClick={togglePrivacyPolicy}>Política de Privacidade</a>
+                </label>
+                {errors.privacy && <span className="error-message">{errors.privacy}</span>}
+              </div>
+              
+              <div className="secure-note">
+                <span className="secure-icon">🔒</span>
+                <p>Seus dados estão seguros. Utilizamos criptografia SSL para proteger suas informações. Nunca compartilhamos seus dados com terceiros.</p>
+              </div>
               
               <button 
                 type="submit" 
                 className="submit-btn"
-                disabled={submitting}
+                disabled={submitting || !privacyAccepted}
               >
                 {submitting ? 'Enviando...' : 'Enviar Solicitação'}
               </button>

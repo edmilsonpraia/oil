@@ -12,6 +12,7 @@ const ContactForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [privacyChecked, setPrivacyChecked] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,13 +26,45 @@ const ContactForm = () => {
     setPrivacyChecked(e.target.checked);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Impede o comportamento padrão de envio do formulário
     setSubmitting(true);
-    // O formulário ainda será enviado normalmente pelo Formspree
-    setTimeout(() => {
-      setFormSubmitted(true);
+    setError(null);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mzzepakn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          telephone: formData.telephone,
+          message: formData.message,
+          _subject: "Novo contato do site"
+        })
+      });
+      
+      if (response.ok) {
+        setFormSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          telephone: '',
+          message: ''
+        });
+        setPrivacyChecked(false);
+      } else {
+        const data = await response.json();
+        throw new Error(data.error || "Ocorreu um erro ao enviar o formulário. Tente novamente.");
+      }
+    } catch (error) {
+      setError(error.message);
+    } finally {
       setSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -45,11 +78,15 @@ const ContactForm = () => {
         </div>
       ) : (
         <form 
-          action="https://formspree.io/f/mzzepakn"
-          method="POST"
           className="contact-form"
           onSubmit={handleSubmit}
         >
+          {error && (
+            <div className="error-message">
+              <p>{error}</p>
+            </div>
+          )}
+          
           <div className="form-grid">
             <div className="form-group">
               <label htmlFor="name">Nome</label>
@@ -120,11 +157,9 @@ const ContactForm = () => {
             </div>
             
             <button type="submit" className="submit-btn" disabled={submitting}>
-              {submitting ? 'Enviando...' : 'SEND'}
+              {submitting ? 'Enviando...' : 'ENVIAR'}
             </button>
           </div>
-          
-          <input type="hidden" name="_subject" value="Novo contato do site" />
         </form>
       )}
     </div>

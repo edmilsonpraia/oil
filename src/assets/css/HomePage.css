@@ -676,6 +676,6 @@ section + section {
     font-size: 28px;
   }
   .hero-video-container {
-    height: 300px; /* Alterado de 250px para 300px */
+    height: 400px; /* Alterado de 250px para 300px */
   }
 }

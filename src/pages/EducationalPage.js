@@ -601,7 +601,7 @@ const EducationalPage = () => {
                       <option value="petrel">Automação de processos com vba no excel</option>
                       <option value="petrel">Interpretão de dados de diagrafias</option>
                       <option value="petrel">Acidificação em poço de petróleo</option>
-                      <option value="petrel">Modelagem Estática no Petrel</option>
+                      <option value="petrel">Modelagem Estática de reservatórios</option>
                       <option value="petrel">Microsoft Word para Profissionais</option>
                       <option value="petrel">Microsoft Excel Avançado</option>
                       <option value="petrel">Microsoft PowerPoint: Criação de Apresentações Profissionais</option>

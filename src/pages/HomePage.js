@@ -34,21 +34,21 @@ const HomePage = () => {
       id: 1,
       name: "Edoson Hernesto",
       position: "Geofísico, Hungria",
-      text: "Me inscrevi nos cursos de Python para tratamento de dados geofísicos, Petrel para modelagem estática de reservatórios e WellStim para tratamento ácido em poços. Em todos eles, aprendi muito e adquiri conhecimentos valiosos para minha carreira. Recomendo a Justificações Acadêmicas tanto para iniciantes quanto para profissionais da área!",
+      text: "Me inscrevi nos cursos de Python para tratamento de dados geofísicos, para modelagem estática de reservatórios e WellStim para tratamento ácido em poços. Em todos eles, aprendi muito e adquiri conhecimentos valiosos para minha carreira. Recomendo a Justificações Acadêmicas tanto para iniciantes quanto para profissionais da área!",
       rating: 5
     },
     {
       id: 2,
       name: "Rodrigues Cacaula",
       position: "Engenheiro, Rússia",
-      text: "Me inscrevi nos cursos de Petrel - Modelagem Estática de Reservatórios e Introdução à Engenharia de Petróleo e Gás. As aulas ao vivo online, com teoria e prática em softwares, foram extremamente proveitosas. Foi uma experiência incrível e merece minhas 5 estrelas!",
+      text: "Me inscrevi nos cursos de - Modelagem Estática de Reservatórios e Introdução à Engenharia de Petróleo e Gás. As aulas ao vivo online, com teoria e prática em softwares, foram extremamente proveitosas. Foi uma experiência incrível e merece minhas 5 estrelas!",
       rating: 5
     },
     {
       id: 3,
       name: "Mosalina Pedro",
       position: "Engenheira na ANPG, Angola",
-      text: "Me inscrevi nos cursos de Petrel - Modelagem Dinâmica de reservatórios, Petrel - Modelagem Estática de reservatórios e WellStim - Tratamento Ácido em Poços. A metodologia híbrida da Justificações Acadêmicas me permite acessar as aulas quando necessário, agendar encontros virtuais com o meu fromador para esclarecer dúvidas e receber feedback sobre minhas tarefas. Tem sido uma experiência excelente!",
+      text: "Me inscrevi nos cursos de - Modelagem Dinâmica de reservatórios, - Modelagem Estática de reservatórios e WellStim - Tratamento Ácido em Poços. A metodologia híbrida da Justificações Acadêmicas me permite acessar as aulas quando necessário, agendar encontros virtuais com o meu fromador para esclarecer dúvidas e receber feedback sobre minhas tarefas. Tem sido uma experiência excelente!",
       rating: 5
     },
     {
@@ -69,7 +69,7 @@ const HomePage = () => {
       id: 6,
       name: "Evan Blez Gaetan",
       position: "Estuante do PhD, Camarões",
-      text: "Я остался очень доволен консультационными услугами Justificações Acadêmicas. Опыт был полезным, и я настоятельно рекомендую их за высокое качество и инновационные решения.",
+      text: "I was very satisfied with the consultancy services of Justificações Acadêmicas. The experience was rewarding and I highly recommend them for their high quality and innovative solutions.",
       rating: 5
     },
     {

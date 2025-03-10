@@ -86,7 +86,7 @@ const ProgrammingPage = () => {
 
       <section className="projects-section">
         <div className="container">
-          <h2>Projetos em Destaque</h2>
+          <h2>Projetos Desenvolvidos</h2>
           <div className="projects-grid">
             {projects.map(project => (
               <div key={project.id} className="project-card">

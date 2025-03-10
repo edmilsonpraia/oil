@@ -19,7 +19,7 @@ const FAQ = () => {
     },
     {
       question: 'QUAIS SÃO OS REQUISITOS TÉCNICOS PARA PARTICIPAR DO CURSO?',
-      answer: 'Para melhor aproveitamento do curso, recomendamos um computador com acesso à internet. E nós, ofeeceremos os software bem como todo o suporte durante o curso.'
+      answer: 'Para melhor aproveitamento do curso, recomendamos um computador com acesso à internet. E nós, ofeceremos o suporte durante o curso.'
     },
     {
       question: 'O CERTIFICADO É RECONHECIDO?',

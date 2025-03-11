@@ -111,7 +111,7 @@ const ProgrammingPage = () => {
         <div className="container">
           <div className="case-content">
             <div className="case-text">
-              <h2>Estudo de Caso: Otimização do Aprendizado</h2>
+              <h2>Estudo de Caso: Optimização do Aprendizado</h2>
               <p>Nossa equipe desenvolveu uma metodologia avançada de ensino que aumentou em 35% a eficiência do aprendizado em cursos técnicos da indústria de petróleo e gás.</p>
               <p>A solução combina conteúdos interativos, análise de desempenho em tempo real e inteligência artificial para personalizar a experiência do aluno e otimizar seu desenvolvimento profissional.</p>
               <button className="btn-signup">Somos eternos aprendizes</button>

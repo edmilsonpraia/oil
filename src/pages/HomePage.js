@@ -224,7 +224,7 @@ const HomePage = () => {
       {/* Training Info Section */}
       <section className="training-info">
         <div className="container">
-          <h2>Sitema de Aprendizado</h2>
+          <h2>Sistema de Aprendizado</h2>
           <div className="training-features">
             <div className="feature">
               <h3>Aulas Gravadas</h3>

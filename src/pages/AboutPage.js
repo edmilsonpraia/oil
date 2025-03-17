@@ -16,7 +16,7 @@ import img006 from '../assets/images/imag03.jpg';
 // Imagens para a terceira galeria (nova seção)
 // Você pode substituir estas importações pelos caminhos das suas novas imagens
 import img007 from '../assets/images/4.jpg'; // Temporariamente reusando a mesma imagem
-import img008 from '../assets/images/7.jpg'; // Temporariamente reusando a mesma imagem
+import img008 from '../assets/images/8.jpeg'; // Temporariamente reusando a mesma imagem
 import img009 from '../assets/images/5.jpg'; // Temporariamente reusando a mesma imagem
 
 const AboutPage = () => {
@@ -229,7 +229,7 @@ const AboutPage = () => {
       <section id="gallery3" className={`gallery-section ${isVisible.gallery3 ? 'animate' : ''}`}>
         <div className="container">
           <h2 className="section-title">Apresentação da Inteligência PetroChat na Ufa University of Science and Technology (UUST)</h2>
-          <p className="section-subtitle">Experiências práticas e projetos reais que desenvolvem habilidades técnicas em aplicações do mundo real. Desenvolvemos a IA PetroChat, uma solução inovadora com expertise em tecnologia aplicada à indústria de petróleo, apresentada na Ufa University of Science and Technology (UUST) na Rússia.</p>
+          <p className="section-subtitle">Experiências práticas e projetos reais que desenvolvem habilidades técnicas para aplicações no mundo real. Desenvolvemos a IA PetroChat, uma solução inovadora com expertise em tecnologia aplicada à indústria de petróleo, apresentada para cientistas e professores doutores da Universidade de Ciência e Tecnologia de Ufa, na Rússia.</p>
           
           <div className="gallery-grid">
             <div className="gallery-item">

@@ -32,7 +32,7 @@ const HomePage = () => {
   const feedbacks = [
     {
       id: 1,
-      name: "Edoson Hernesto",
+      name: "Edoson Ernesto",
       position: "Geofísico, Hungria",
       text: "Me inscrevi nos cursos de Python para tratamento de dados geofísicos, para modelagem estática de reservatórios e WellStim para tratamento ácido em poços. Em todos eles, aprendi muito e adquiri conhecimentos valiosos para minha carreira. Recomendo a Justificações Acadêmicas tanto para iniciantes quanto para profissionais da área!",
       rating: 5
